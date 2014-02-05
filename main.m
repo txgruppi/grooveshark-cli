@@ -47,6 +47,10 @@ void executePrevious(ChromeTab *tab) {
   [tab executeJavascript:@"(function(){ return Grooveshark.previous(); })();"];
 }
 
+void executeFavorite(ChromeTab *tab) {
+  [tab executeJavascript:@"(function(){ return Grooveshark.favoriteCurrentSong(); })();"];
+}
+
 void executeVolume(ChromeTab *tab, int volume) {
   if (volume <= 0) {
     volume = -1; // Set volume to -1 if its 0. 0 is buggy
@@ -100,6 +104,9 @@ int main(int argc, char *argv[]) {
       cmdFound = 1;
     } else if (strcmp(argv[1], "unmute") == 0 || strcmp(argv[1], "um") == 0) {
       executeUnmute(tab);
+      cmdFound = 1;
+    } else if (strcmp(argv[1], "favorite") == 0 || strcmp(argv[1], "fav") == 0 || strcmp(argv[1], "f") == 0) {
+      executeFavorite(tab);
       cmdFound = 1;
     } else if (strcmp(argv[1], "status") == 0 || strcmp(argv[1], "st") == 0) {
       NSDictionary *song = getCurrentSongStatus(tab);
