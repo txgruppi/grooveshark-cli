@@ -31,14 +31,6 @@ BOOL isPaused(ChromeTab *tab) {
   return [getPlayStatus(tab) isEqualToString:@"paused"];
 }
 
-void executePlay(ChromeTab *tab) {
-  [tab executeJavascript:@"(function(){ return Grooveshark.play(); })();"];
-}
-
-void executePause(ChromeTab *tab) {
-  [tab executeJavascript:@"(function(){ return Grooveshark.pause(); })();"];
-}
-
 void executeNext(ChromeTab *tab) {
   [tab executeJavascript:@"(function(){ return Grooveshark.next(); })();"];
 }
@@ -65,11 +57,7 @@ void executeVolume(ChromeTab *tab, int volume) {
 }
 
 void executePlayPause(ChromeTab *tab) {
-  if (isPlaying(tab)) {
-    executePause(tab);
-  } else {
-    executePlay(tab);
-  }
+  [tab executeJavascript:@"(function(){ return Grooveshark.togglePlayPause(); })();"];
 }
 
 void usage(char *cmd) {
