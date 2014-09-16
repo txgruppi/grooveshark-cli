@@ -66,15 +66,15 @@ void executePlayPause(ChromeTab *tab) {
 
 void usage(char *cmd) {
   printf("Usage: %s <command>\n\n  Commands:\n", cmd);
-  printf("    %-28s\n      %s\n", "status|st",                  "Show iTunes status and track information");
+  printf("    %-28s\n      %s\n", "status|st",                  "Show Grooveshark status and track information");
   printf("    %-28s\n      %s\n", "play|pause|playpause|pp",    "Toggle the playing/paused state of the current track");
   printf("    %-28s\n      %s\n", "next|n",                     "Advance to the next track in the current playlist");
   printf("    %-28s\n      %s\n", "prev|p",                     "Return to the previous track in the current playlist");
-  printf("    %-28s\n      %s\n", "mute|m",                     "Mute iTunes' volume");
-  printf("    %-28s\n      %s\n", "unmute|um",                  "Unmute iTunes' volume");
-  printf("    %-28s\n      %s\n", "vol up|u",                   "Increase iTunes' volume by 10%");
-  printf("    %-28s\n      %s\n", "vol down|d",                 "Decrease iTunes' volume by 10%");
-  printf("    %-28s\n      %s\n", "vol #|v #",                  "Set iTunes' volume to # [0-100]");
+  printf("    %-28s\n      %s\n", "mute|m",                     "Mute Grooveshark's volume");
+  printf("    %-28s\n      %s\n", "unmute|um",                  "Unmute Grooveshark's volume");
+  printf("    %-28s\n      %s\n", "vol up|u",                   "Increase Grooveshark's volume by 10%");
+  printf("    %-28s\n      %s\n", "vol down|d",                 "Decrease Grooveshark's volume by 10%");
+  printf("    %-28s\n      %s\n", "vol #|v #",                  "Set Grooveshark's volume to # [0-100]");
 }
 
 int main(int argc, char *argv[]) {
