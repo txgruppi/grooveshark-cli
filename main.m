@@ -6,7 +6,10 @@
 ChromeTab *getFirstGroovesharkTab(ChromeApplication *app) {
   for (ChromeWindow *window in [[app windows] get]) {
     for (ChromeTab *tab in [[window tabs] get]) {
-      if ([[tab URL] hasPrefix:@"http://grooveshark.com/"]) {
+      if (
+          [[tab URL] hasPrefix:@"http://grooveshark.com/"]
+       || [[tab URL] hasPrefix:@"http://preview.grooveshark.com/"]
+      ) {
         return tab;
       }
     }
